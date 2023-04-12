@@ -1,26 +1,7 @@
 module.exports = {
   i18n: {
     defaultLocale: 'en',
-    locales: [
-      "bn",
-      "de",
-      "en",
-      "es",
-      "fr",
-      "he",
-      "id",
-      "it",
-      "ja",
-      "ko",
-      "pt",
-      "ru",
-      "ro",      
-      "sv",
-      "te",
-      "vi",
-      "zh",
-      "ar",
-    ],
+    locales: ['en'],
   },
   localePath:
     typeof window === 'undefined'
