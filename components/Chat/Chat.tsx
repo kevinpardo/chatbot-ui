@@ -98,7 +98,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           messages: updatedConversation.messages,
           key: apiKey,
           prompt: updatedConversation.prompt,
-          temperature: updatedConversation.temperature
+          temperature: updatedConversation.temperature,
         };
         const endpoint = getEndpoint(plugin);
         let body;
@@ -224,7 +224,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           };
           homeDispatch({
             field: 'selectedConversation',
-            value: updateConversation,
+            value: updatedConversation,
           });
           saveConversation(updatedConversation);
           const updatedConversations: Conversation[] = conversations.map(
@@ -425,14 +425,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                       />
 
                       <TemperatureSlider
-                          label="Temperature"
-                          onChangeTemperature={(temperature) =>
-                            handleUpdateConversation(selectedConversation, {
-                              key: 'temperature',
-                              value: temperature,
-                            })
-                          }
-                        />
+                        label="Temperature"
+                        onChangeTemperature={(temperature) =>
+                          handleUpdateConversation(selectedConversation, {
+                            key: 'temperature',
+                            value: temperature,
+                          })
+                        }
+                      />
                     </div>
                   )}
                 </div>
